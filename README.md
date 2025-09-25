@@ -1,87 +1,101 @@
-# Frontend Developer Intern Assignment  
-
-## Mandatory Tasks
-- Follow SolveEase on [Github](https://github.com/solve-ease) and [Linkedin](https://www.linkedin.com/company/solve-ease)
-- Star this repo
-
-## Objective  
-This assignment is designed to assess your practical skills in **React, Next.js, TypeScript, Tailwind CSS, and frontend optimizations**. You will work on an existing **Next.js application** that contains layout/design issues and some configuration bugs. Your task is to identify and resolve these issues, and implement the listed features to enhance the overall user experience. 
+# SolveEase – Assignement-Sabir-Hussain
+A full-stack web application built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**, providing a platform to list and browse service workers with filtering and pagination.  
 
 ---
 
-## Tasks  
+## 🚀 Getting Started  
 
-### 1. Fix Cards Layout & Responsiveness  
-- Correct the existing card grid layout.  
-- Improve the overall card design (UI/UX sensibility expected).  
-- Ensure the page is fully responsive across devices (desktop, tablet, mobile).  
-
-### 2. Add Navbar (Sticky)  
-- Implement a navigation bar that remains fixed at the top while scrolling.  
-- Design should be clean and responsive.  
-
-### 3. Optimize Page Load & Performance  
-- Implement optimizations such as:  
-  - **Lazy loading** for images and non-critical components.  
-  - **Memoization** to avoid unnecessary re-renders.  
-  - **Skeleton loading screens** for better UX during data fetch.  
-
-### 4. Implement Pagination  
-- Add pagination for the workers listing page.  
-- Each page should load a suitable number of items (e.g., 9–12 cards per page).  
-
-### 5. Service Filters  
-- Implement filters for workers based on **price/day** and **type of service**.  
-- Filters should work seamlessly with pagination.  
-
-### 6. Bug Fixes  
-- Identify and fix any existing issues in `page.tsx` or configuration files.  
-- Resolve console warnings or errors.  
-- Ensure clean and maintainable code following best practices.  
-
-### 7. API Integration  
-- Currently, the workers’ data is being imported directly from `workers.json`.  
-- Your task is to **serve this data via /api/wprkers API route**.  
-- Update the frontend page to fetch this data using `fetch` (or any modern method such as `useEffect`, `useSWR`, or React Query).
-- Donot delete the existing data loading logic, comment it out.  
-- Implement:  
-  - **Loading state** (use skeleton screens).  
-  - **Error handling** (show a friendly error message if API fails).  
-  - **Basic caching or memoization** to prevent redundant calls.  
+### ✅ Prerequisites  
+- **Node.js v18.x** (tested on `18.17.1`)  
+- **npm** or **yarn** installed  
 
 ---
 
-## Expectations  
-- Use **TypeScript** and **Tailwind CSS** consistently.  
-- Follow **component-driven development** principles.  
-- Write **clean, readable, and reusable code**.  
-- Optimize for **performance and accessibility**.  
-- Maintain **Git commit history** (no single "final commit").  
+### 📦 Installation & Setup  
+
+## Clone the repository and install dependencies:  
+
+git clone https://github.com/yourusername/assignment-Sabir-Hussain.git
+cd assignment-Sabir-Hussain
+npm install
+
+
+## Start the development server:  
+
+## npm run dev
+The app will be available at: [http://localhost:3000](http://localhost:3000)  
 
 ---
 
-## Deliverables  
-1. Fork the repo and work from a branch named: assignment/<your-full-name> (for example: assignment/adarsh-maurya).
-2. Implement improvements and features that demonstrate your mastery of the job requirements (UI polish, responsiveness, Tailwind usage, tests, accessibility, performance).
-3. Push your branch to GitHub, add a clear README, and (strongly recommended) deploy the app (Vercel/Netlify/GH Pages)
-3. Fill in the Google Form with your details for submission.
+## 🏗️ Build for Production  
+
+Using **npm**:  
+
+## npm run dev
+## npm start
+
+
 
 ---
 
-## Evaluation Criteria  
-- Code quality, readability, and structure.  
-- UI/UX improvements and responsiveness.  
-- Correctness of functionality (filters, pagination, sticky navbar, optimisations).  
-- Debugging and problem-solving approach.  
-- Git usage and commit practices.  
-- Handling of API calls, loading states, and error cases.  
+## 📚 Features Implemented  
+
+- Built using **Next.js App Router** with server and client components.  
+- Written in **TypeScript** for type safety and better developer experience.  
+- Styled with **Tailwind CSS** for a responsive and clean UI.  
+- Fetches worker data from a mock API route: `/api/workers`.  
+- Filtering options implemented by:  
+  - Service type  
+  - Maximum price per day  
+- Pagination for browsing results (12 workers per page).  
+- Optimized images using **next/image**.  
+- **Navbar features**:  
+  - Dropdown to filter by service  
+  - Input to filter by max price  
+  - Link to an external Google Form for submissions  
 
 ---
 
-## Notes  
-- You are free to use libraries like **SWR** or **React Query**, but keep the implementation clean.  
-- Focus on **real-world production quality code**, not just quick fixes. 
-- Add comment for any **bug fix or optimization.** 
-- Document any **extra improvements** you make in your submission.
+## 📁 Directory Structure  
 
-Good luck 🚀  
+| Path | Description |
+|------|-------------|
+| `src/app/page.tsx` | Main workers listing page (App Router) |
+| `src/Components/Navbar.tsx` | Navbar component with filtering controls |
+| `src/pages/api/workers.ts` | API route serving mock worker data |
+| `public/workers.json` (optional) | Source of static worker data (mock) |
+
+---
+
+## ✅ Assumptions  
+
+- The backend API at `/api/workers` is mocked and returns static JSON data.  
+- **GST is assumed to be 18%**, calculated and displayed on the frontend only.  
+- Worker images are assumed to be either:  
+  - Stored in the `public/` directory, or  
+  - Loaded from remote URLs (e.g., CDN).  
+- Worker service types are consistently named to ensure accurate filtering.  
+
+---
+
+## ⚖️ Trade-offs & Known Issues  
+
+- Uses client-side filtering and pagination, which may not scale with large datasets.  
+- API is mocked and not connected to a real backend or database.  
+- Filter state is not persisted in the URL, so it resets on page refresh.  
+- Error handling is minimal (e.g., plain text for API fetch errors).  
+- ESLint warning for unused variable `error` resolved by prefixing with `_error`.  
+
+## 📸 Screenshots
+
+### Home – Listings
+![Home Listings](./screenshots/Assignment_Img2.png)
+
+### Filters – Service & Price
+![Filters](./screenshots/filter.png)
+
+### Pagination
+![Pagination](./screenshots//pagination.png)
+
+### Mobile View
+![Mobile](./screenshots//mobileView_img.png)
